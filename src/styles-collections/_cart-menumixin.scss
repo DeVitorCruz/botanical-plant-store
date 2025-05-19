@@ -1,0 +1,10 @@
+@mixin space-sizing() {
+    padding-top: 16px !important;
+    margin-right: 0 !important;
+}
+
+@mixin wishlist() {
+    font-size: 18px;
+    line-height: 1.11111;
+    padding: 0 15px 0 0;
+}

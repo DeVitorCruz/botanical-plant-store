@@ -1,0 +1,93 @@
+@use '_bannermixin' as bannermixin;
+@use '_breakpoints' as breakpoints;
+@use '_slick-trackmixin' as slicktrackmixin;
+
+.slick-move {
+    @include bannermixin.slick-list();
+    transform: translate3d(0, 0, 0);
+    
+    app-slick-track {
+        @include slicktrackmixin.slick-track(); 
+
+        &::before {
+            display: table;
+            content: "";
+        }
+    }
+}
+
+.slick-list-nums {
+    @include bannermixin.slick-navigator-wrap();
+    @include bannermixin.slick-list-nums();
+
+    li {
+        pointer-events: auto;
+        text-indent: -99999px;
+        position: relative;
+        margin-bottom: 4px;
+
+        &:first-child {
+            margin-left: 58px;
+        }
+
+        &:last-child {
+            display: block;
+            padding-left: 22px;
+            text-indent: 0;
+        }
+
+        &::before {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            text-indent: 0;
+            counter-increment: item;
+            content: counters(item, ". ", decimal)"/";
+            color: #6e6e6e;
+        }
+    }
+
+    .list-item {
+        button {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+
+    .slick-active {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @include breakpoints.respond(sm) {
+        bottom: 50px;
+        max-width: 510px;
+        display: flex;
+    }
+
+    @include breakpoints.respond(md) {
+        max-width: 690px;
+    }
+
+    @include breakpoints.respond(lg) {
+        bottom: 90px;
+        max-width: 930px;
+    }
+
+    @include breakpoints.respond(xxlg) {
+        bottom: 120px;
+        max-width: 1140px;
+    }
+
+    @include breakpoints.respond(xxxxlg) {
+        bottom: 164px;
+    }
+}

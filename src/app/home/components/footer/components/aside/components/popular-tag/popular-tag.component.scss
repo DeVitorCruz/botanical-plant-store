@@ -1,0 +1,43 @@
+@use '_asidemixin' as asidemixin;
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+
+.popular-tag {
+    .title {
+        @include asidemixin.aside-title-heading(16px, 18px, #444444, 1px);
+        @include asidemixin.text-side-dimention(bold, uppercase, 35px);
+    }
+
+    .tag-list {
+        @include asidemixin.aside-container-flex(flex, wrap);
+        @include asidemixin.unestaled-list(0, 0, none);
+        @include asidemixin.text-style-list(14px, 16px, #707070);
+
+        .tag-item {
+            text-align: center !important;
+            margin-bottom: 10px !important;
+        }
+
+        .size-mr-2 {
+            margin-right: 10px !important;
+        }
+
+        .mat-raised-button {
+            color: #444444;
+        }
+    }
+}
+
+::ng-deep .tag-item .mat-mdc-raised-button:not(:disabled) {
+    color: #666666 !important;
+    transition: all .25s linear;
+
+    &:hover {
+        color: #fff !important;
+        background-color: #5ba515;
+    }
+
+    @include breakpoints.respond(ssm) {
+        min-width: 120px;
+    }
+}

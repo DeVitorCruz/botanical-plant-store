@@ -1,0 +1,40 @@
+<div 
+    class="slick-slide"
+    style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+    aria-hidden="false"
+    role="tabpanel"
+    aria-describedby="slick-slide-control00"
+    >
+    <ng-container *ngFor="let slide of slides; let i = index">
+        <div
+            *ngIf="i === activeIndex"
+            class="img-background"
+            [style]="'background-image: url('+ slide.banner +')'"
+            >
+            <div class="container-text">
+                <div class="content-row">
+                    <div class="content-column">
+                        <div class="text-wrap">
+                            <h1 class="text-title">
+                                {{ slide.textTitle }}
+                                <span class="text-break">{{ slide.textBreak }}</span>
+                            </h1>
+                            <p class="discription">
+                                {{ slide.description }}
+                                <br>
+                                {{ slide.descriptionBreak }}
+                            </p>
+                            <button class="btn-content-wrap" mat-raised-button>
+                                Show Now
+                                <mat-icon aria-hidden="false" aria-label="Arrow right" fontIcon="arrow_forward"></mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="img-holder">
+                        <img [src]="`${slide.imgPath}`" [alt]="`${slide.imgAlt}`">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,38 @@
+@use '_asidemixin' as asidemixin;
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+
+aside {
+    overflow: hidden !important;
+    @include mixin.container-fluid();
+
+    .aside__container {
+        @include asidemixin.aside-container-flex(flex, wrap);
+        
+        app-contact-us, app-information, app-my-account, app-popular-tag {
+            @include asidemixin.contact-us-side(100%, 16px);
+            @include asidemixin.aside-breakpoints-columns();
+        }
+    
+        @include breakpoints.respond(lg) {
+            flex-wrap: nowrap !important;
+        }
+    }
+
+    @include breakpoints.respond(md) {
+        padding-top: 40px !important;    
+    }
+
+    @include breakpoints.respond(lg) {
+        padding-bottom: 40px !important;
+        padding-top: 60px !important;
+        padding-right: 70px !important;    
+        padding-left: 70px !important;    
+    }
+
+    @include breakpoints.respond(xxlg) {
+        padding-bottom: 40px !important;    
+        padding-top: 60px !important;    
+        padding-right: 100px !important;    
+    }
+}

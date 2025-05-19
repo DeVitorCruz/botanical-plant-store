@@ -1,0 +1,85 @@
+@use '_bannermixin' as bannermixin;
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+@use '_featureproductsmixin' as featureproductsmixin;
+@use '_justifymixin' as justifymixin;
+@use '_contactlistmixin' as contactlistmixin;
+@use '_subscriptionmixin' as subscriptionmixin;
+@use '_mainmixin' as mainmixin;
+
+main {
+    .justify, .contact-list, .offer-product, .partner {
+        @include mainmixin.main-breakpoint-collections-size();
+    }
+
+    .justify, .feature-products, .contact-list, .offer-product, .product-carousel, .partner, .subscription {
+        @include mixin.container-fluid();
+    }
+
+    app-justify, app-contact-list, app-offer-product, app-partner {
+        @include mixin.justify-style-row();
+    }
+
+    .banner {
+        position: relative;
+        font-size: 16px;
+        line-height: 20px;
+        color: #6e6e6e;
+
+        app-banner {
+            @include bannermixin.slick-slider();
+        }
+
+        .slick-navigator-wrap {
+            @include bannermixin.slick-navigator-wrap();
+            @include bannermixin.breakpoints-slick-navigator-wrap();
+
+            a {
+                transition: all .25s linear;
+            }
+
+            .prev-slick, .next-slick {
+                @include bannermixin.slick-arrow-style(17px, 22px, #444444);
+            }
+
+            .next-slick {
+                margin-left: 109px;
+            }
+        }
+    }
+
+    .justify {
+        display: block;
+        @include mainmixin.main-breakpoint-justify();
+    }
+
+    .feature-products {
+        @include featureproductsmixin.feature-products-style-collection();
+        @include mainmixin.main-breakpoint-features-products();
+    }
+
+    .contact-list {
+        @include mixin.features-contact-list(20px, 5px);
+        @include mainmixin.main-breakpoint-features-conact-list();
+    }
+
+    .offer-product {
+        @include mixin.features-contact-list(25px, 25px);
+        @include mainmixin.main-breakpoint-features-offer-product();
+    }
+
+    .product-carousel {
+        @include mixin.features-contact-list(25px, 25px);
+        @include mainmixin.main-breakpoint-features-product-carousel();
+    }
+
+    .partner {
+        @include mixin.features-contact-list(50px, 25px);
+        @include mainmixin.main-breakpoint-features-partner();
+    }
+
+    .subscription {
+        @include mixin.features-contact-list(50px, 25px);
+        @include mainmixin.main-breakpoint-features-subscription();
+    }
+}

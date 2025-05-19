@@ -1,0 +1,29 @@
+@use '_asidemixin' as asidemixin;
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+
+.information {
+    .title {
+        @include asidemixin.aside-title-heading(16px, 18px, #444444, 1px);
+        @include asidemixin.text-weight-bottom();
+    }
+
+    .info-features-list {
+        @include asidemixin.unestaled-list(16px, 0, none);
+
+        li {
+            a {
+                @include mixin.info-item-style();
+                @include mixin.hover-green-style();
+            }
+        }
+
+        .info-item-1 {
+            margin-bottom: 5px !important;
+        }
+
+        .info-item-2 {
+            margin-bottom: 10px !important;
+        }
+    }
+}

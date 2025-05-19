@@ -1,0 +1,105 @@
+@use '_breakpoints' as breakpoints; 
+@use '_mixin' as mixin;
+@use '_menumixin' as menumixin;
+@use '_materialsmixin' as materialsmixin;
+@use '_headermixin' as headermixin;
+@use '_maxbreakpoints' as maxbreakpoints;
+
+.header {
+    @include mixin.container-fixed();
+    @include mixin.container-flex();
+    @include mixin.container-fluid();
+    padding-top: 10px !important;
+    overflow: hidden;
+
+    @include breakpoints.respond(md) {
+        padding-top: 16px !important;
+    }
+
+    @include breakpoints.respond(lg) {
+        padding-top: 25px !important;
+    }
+
+    .header__toolbar {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        app-lang-menu {
+            @include mixin.flex-item(50%, 50%, 0);
+            @include mixin.relative-content();
+        
+            @include breakpoints.respond(sm) {
+                @include mixin.flex-item(25%, 25%, 0);
+                @include mixin.order-item(3, 2);
+            }
+        
+            @include breakpoints.respond(md) {
+                @include mixin.order-item(1, 0);
+            }
+        
+            @include breakpoints.respond(lg) {
+                @include mixin.flex-item(16.66667%, 16.66667%, 0);
+            }
+
+            @include maxbreakpoints.respond(sm) {
+                display: none;
+            }
+        }
+
+        app-menu {
+            @include mixin.flex-item(100%, 100%, 0);
+            @include mixin.relative-content();
+            position: static;
+        
+            @include breakpoints.respond(sm) {
+                @include mixin.flex-item(50%, 50%, 0);
+            }
+        
+            @include breakpoints.respond(lg) {
+                @include mixin.flex-item(66.66667%, 66.66667%, 0);
+            }
+        }
+
+        app-cart-menu {
+            @include mixin.flex-item(50%, 50%, 0);
+            @include mixin.relative-content();
+        
+            @include breakpoints.respond(sm) {
+                @include mixin.flex-item(25%, 25%, 0);
+                @include mixin.order-item(4, 3);
+            }
+        
+            @include breakpoints.respond(md) {
+                @include mixin.order-item(1, 0);
+            }
+        
+            @include breakpoints.respond(lg) {
+                @include mixin.flex-item(16.66667%, 16.66667%, 0);
+            }
+
+            @include maxbreakpoints.respond(sm) {
+                display: none;
+            }
+        }
+
+        @include breakpoints.respond(md) {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+        }
+
+        @include breakpoints.respond(lg) {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
+
+        @include breakpoints.respond(xxlg) {
+            padding-right: 85px !important;
+            padding-left: 85px !important;
+        }
+    }
+
+    @include headermixin.collapse-menu-features();
+}
+
+@include menumixin.border-top-green-panel-content(#5ba515);
+@include materialsmixin.menu-panel-hover-green(white, .3s, ease, black)

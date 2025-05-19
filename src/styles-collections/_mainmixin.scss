@@ -1,0 +1,118 @@
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+@use '_featureproductsmixin' as featureproductsmixin;
+@use '_subscriptionmixin' as subscriptionmixin;
+
+@mixin main-breakpoint-collections-size() {
+    @include breakpoints.respond(sm) {
+        max-width: 540px;
+    }
+
+    @include breakpoints.respond(md) {
+        max-width: 720px;
+    }
+
+    @include breakpoints.respond(lg) {
+        max-width: 960px;
+    }
+
+    @include breakpoints.respond(xxlg) {
+        max-width: 1200px;
+    }
+}
+
+@mixin main-breakpoint-justify() {
+    @include breakpoints.respond(md) {
+        @include mixin.padding-sizing-top-bottom(35px, 80px);
+    }
+
+    @include breakpoints.respond(lg) {
+        padding-top: 100px !important;
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include mixin.padding-sizing-top-bottom(60px, 110px);
+    }
+}
+
+@mixin main-breakpoint-features-products() {
+    @include breakpoints.respond(md) {
+        padding-bottom: 10px !important;
+    }
+
+    @include breakpoints.respond(lg) {
+        @include featureproductsmixin.features-sizing-padding(50px, 35px, 35px, 20px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include featureproductsmixin.features-sizing-padding(60px, 70px, 70px, 50px);
+    }
+}
+
+@mixin main-breakpoint-features-conact-list() {
+    @include breakpoints.respond(md) {
+        @include mixin.padding-sizing-top-bottom(20px, 40px);
+    }
+
+    @include breakpoints.respond(lg) {
+        @include mixin.padding-sizing-top-bottom(50px, 50px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include mixin.padding-sizing-top-bottom(60px, 40px);
+    }
+}
+
+@mixin main-breakpoint-features-offer-product() {
+    @include breakpoints.respond(md) {
+        @include mixin.padding-sizing-top-bottom(40px, 40px);
+    }
+
+    @include breakpoints.respond(lg) {
+        @include mixin.padding-sizing-top-bottom(50px, 50px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include mixin.padding-sizing-top-bottom(60px, 60px);
+    }
+}
+
+@mixin main-breakpoint-features-product-carousel() {
+    @include breakpoints.respond(md) {
+        @include mixin.padding-sizing-top-bottom(40px, 40px);
+    }
+
+    @include breakpoints.respond(lg) {
+        @include mixin.padding-sizing-top-bottom(50px, 50px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include mixin.padding-sizing-top-bottom(60px, 60px);
+    }
+}
+
+@mixin main-breakpoint-features-partner() {
+    @include breakpoints.respond(md) {
+        @include mixin.padding-sizing-top-bottom(80px, 40px);
+    }
+
+    @include breakpoints.respond(lg) {
+        @include mixin.padding-sizing-top-bottom(100px, 50px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        @include mixin.padding-sizing-top-bottom(115px, 60px);
+    }
+}
+
+@mixin main-breakpoint-features-subscription() {
+    @include breakpoints.respond(lg) {
+        max-width: 960px;
+        @include subscriptionmixin.padding-sizing-top-bottom(70px, 70px);
+    }
+
+    @include breakpoints.respond(xxlg) {
+        max-width: 1200px;
+        @include subscriptionmixin.padding-sizing-top-bottom(100px, 100px);
+    }
+}

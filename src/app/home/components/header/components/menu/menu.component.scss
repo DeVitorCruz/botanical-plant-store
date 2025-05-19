@@ -1,0 +1,121 @@
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+@use '_menumixin' as menumixin;
+@use '_materialsmixin' as materialsmixin;
+@use '_maxbreakpoints' as maxbreakpoints;
+
+$color-green: #5ba515;
+
+.menu {
+    @include mixin.justify-content(center, center);
+
+    .menu__navbar {
+        @include menumixin.nav-bar-features(relative, flex, wrap, center, center, justify, space-between, 15px 15px);
+        @include menumixin.page-nav(14px, 16px, #333333, 700, left);
+
+        .menu__collapse {
+            @include menumixin.collapse-nav-bar-display(none, absolute, #fff);
+            @include menumixin.collapse-nav-bar(100%, 1, 1, center, center);
+
+            .menu__list {
+                @include menumixin.nav-bar-list-content();
+                @include menumixin.nav-bar-list(0, 0, none);
+                
+                li {
+                    a {
+                        cursor: pointer;
+                        @include menumixin.nav-bar-list-item();
+                        @include breakpoints.respond(lg) {
+                            margin: 13px 0 0;
+                            padding: 0;
+                        }
+
+                        img {
+                            @include mixin.fill-height-img(100%, auto);
+                        }
+                    }
+
+                    .nLogo {
+                        display: none;
+
+                        @include breakpoints.respond(lg) {
+                            @include menumixin.block-adjusted(-13px 0 0, 110px, block);
+                        }
+
+                        @include breakpoints.respond(xxlg) {
+                            width: 140px;
+                        }
+
+                        @include breakpoints.respond(xxxlg) {
+                            width: 165px;
+                        }
+                    }
+
+                    @include breakpoints.respond(lg) {
+                        @include menumixin.middle-display(inline-block, middle, 0 13px);
+                    }
+
+                    @include breakpoints.respond(xxxlg) {
+                        margin: 0 18px;
+                    }
+                }
+
+                .menu__list-item {
+                    cursor: pointer;
+
+                    &--active {
+                        color: $color-green;
+                    }
+                }
+
+                @include breakpoints.respond(lg) {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                }
+            }
+
+            @include breakpoints.respond(lg) {
+                @include menumixin.collapse-nav-bar-flex(flex, auto, static, transparent);
+            }
+        }
+
+        @include breakpoints.respond(lg) {
+            float: none;
+            @include menumixin.page-nav-lg(horizontal, normal, row wrap, start, flex-start);
+        }
+    }
+
+    .menu__logo {
+        width: 115px;
+
+        a {
+            @include menumixin.logo-text-features(#007bff, none, transparent);
+            transition: all .25s linear;
+
+            img {
+                @include mixin.fill-height-img(100%, auto);
+            }
+        }
+
+        @include breakpoints.respond(sm) {
+            margin: 0 30px 0 auto;    
+        }
+        
+        @include breakpoints.respond(md) {
+            margin: 0 auto;
+        }
+
+        @include breakpoints.respond(lg) {
+            display: none;
+        }
+
+        @include maxbreakpoints.respond(sm) {
+            float: right;
+        }
+    }
+}
+
+@include menumixin.border-top-green-panel-content($color-green);
+@include menumixin.hidden-menu-btn();
+@include materialsmixin.menu-panel-hover-green(white, .3s, ease, $color-green);
+@include materialsmixin.menu-panel-item-focuse-disabled(none, none, none);

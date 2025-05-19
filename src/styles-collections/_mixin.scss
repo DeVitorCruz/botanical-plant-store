@@ -1,0 +1,98 @@
+@mixin container-fixed() {
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+}
+
+@mixin container-flex() {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+@mixin container-fluid() {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin flex-item($flex: 50%, $max-width: 50%, $webkit-box-flex: 0) {
+    flex: 0 0 $flex;
+    max-width: $max-width;
+    --webkit-box-flex: $webkit-box-flex;
+}
+
+@mixin order-item($webkit-box-ordinal-group: 1, $order: 0) {
+    --webkit-box-ordinal-group: $webkit-box-ordinal-group;
+    order: $order;
+}
+
+@mixin relative-content() {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@mixin nav-content() {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    align-items: center;
+}
+
+@mixin border-bottom-0() {
+    border-bottom: 0 !important;
+}
+
+@mixin nav-tabs() {
+    border-bottom: none solid #dee2e6;
+}
+
+@mixin justify-content($webkit-box-pack: center, $justify-content: center) {
+    -webkit-box-pack: $webkit-box-pack !important;
+    justify-content: $justify-content !important;
+}
+
+@mixin fill-height-img($max-width: 100%, $height: auto) {
+    max-width: $max-width;
+    height: $height;
+}
+
+@mixin info-item-style() {
+    color: #707070;
+    transition: all .25s linear;
+    background-color: transparent;
+}
+
+@mixin hover-green-style() {
+    cursor: default !important;
+    
+    &:hover {
+        color: #5ba515 !important;
+    }
+}
+
+@mixin padding-sizing-top-bottom($padding-bottom: 35px, $padding-top: 80px) {
+    padding-bottom: $padding-bottom !important;
+    padding-top: $padding-top !important;
+}
+
+@mixin features-contact-list($padding-top: 20px, $padding-bottom: 5px) {
+    overflow: hidden !important;
+    padding-top: $padding-top !important;
+    padding-bottom: $padding-bottom !important;
+}
+
+@mixin justify-style-row() {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}

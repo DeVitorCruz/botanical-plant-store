@@ -1,0 +1,81 @@
+@use '_breakpoints' as breakpoints;
+
+@mixin banner-section-features() {
+    font-size: 16px;
+    line-height: 20px;
+    color: #6e6e6e;
+    display: block;
+    position: relative;
+    padding-top: 50px !important;
+    padding-bottom: 10px !important;
+}
+
+@mixin slick-slider() {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@mixin slick-navigator-wrap() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin breakpoints-slick-navigator-wrap() {
+    @include breakpoints.respond(sm) {
+        bottom: 50px;
+        max-width: 510px;
+        display: flex;
+    }
+
+    @include breakpoints.respond(md) {
+        max-width: 690px;
+    }
+
+    @include breakpoints.respond(lg) {
+        bottom: 90px;
+        max-width: 930px;
+    }
+
+    @include breakpoints.respond(xxlg) {
+        bottom: 120px;
+        max-width: 1140px;
+    }
+
+    @include breakpoints.respond(xxxxlg) {
+        bottom: 164px;
+    }
+}
+
+@mixin slick-list() {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin slick-list-nums() {
+    font-size: 20px;
+    line-height: 28px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0; 
+    pointer-events: none;
+    counter-reset: item;
+}
+
+@mixin slick-arrow-style($font-size: 17px, $line-height: 22px, $color: #444444) {
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}

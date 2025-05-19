@@ -1,0 +1,32 @@
+<header id="header" class="header">
+    <mat-toolbar class="header__toolbar">
+        <app-lang-menu></app-lang-menu>
+        <app-menu></app-menu>
+        <app-cart-menu></app-cart-menu>
+    </mat-toolbar>
+    <mat-toolbar class="header__toolbar-hidden" [class.header__toolbar-hidden-expanded]="isOpen">
+        <ul>
+            <li *ngFor="let item of menuItems; let i = index">
+                <ng-container *ngIf="!item.hasLogo;">
+                    <ng-container *ngIf="item.submenu; else simpleItem">
+                        <a 
+                            href="#" 
+                            [matMenuTriggerFor]="triggerMenu"
+                            [class.active] = "activeMenu === `${item.label}`"
+                            (menuOpened)="activeMenu = `${item.label}`"
+                            (menuClosed)="activeMenu = null">{{ item.label }}</a>
+                        <mat-menu #triggerMenu="matMenu" class="border-up-color">
+                            <button mat-menu-item *ngFor="let sub of item.submenu">
+                                {{ sub.label }}
+                            </button>
+                        </mat-menu>
+                    </ng-container>
+                    <ng-template #simpleItem>
+                        <a href="#">{{ item.label }}</a>
+                    </ng-template>
+                </ng-container>
+            </li>
+        </ul>
+    </mat-toolbar>
+</header>
+

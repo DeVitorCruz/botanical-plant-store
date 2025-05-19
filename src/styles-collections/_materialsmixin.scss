@@ -1,0 +1,24 @@
+@mixin menu-panel-hover($color: #5ba515, $time: .3s, $mode: ease) {
+    .mat-mdc-menu-item:not([disabled]):hover {
+        color: $color;
+        transition: color $time $mode;
+    }
+}
+
+@mixin menu-panel-hover-green($color: white, $time: .3s, $mode: ease, $background: #5ba515) {
+    .mat-mdc-menu-item:not([disabled]):hover {
+        color: $color;
+        transition: color $time $mode;
+        background: $background !important;
+    }
+}
+
+@mixin menu-panel-item-focuse-disabled($background: none, $outline: none, $box-shadow: none) {
+    ::ng-deep .mat-mdc-menu-item.cdk-focused,
+    ::ng-deep .mat-mdc-menu-item.cdk-program-focused,
+    ::ng-deep .mat-mdc-menu-item.cdk-mouse-focused {
+        background: $background !important;
+        outline: $outline !important;
+        box-shadow: $box-shadow !important;
+    }
+}

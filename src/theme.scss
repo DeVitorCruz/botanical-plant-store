@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+:root {
+    @include mat.toolbar-overrides((
+        container-background-color: transparent,
+    ));
+
+    @include mat.menu-overrides((
+        item-label-text-color: #444444,
+        item-label-text-weight: 400,
+        item-label-text-size: 12,
+        container-color: white,
+        item-hover-state-layer-color: none
+    ));
+
+    @include mat.button-overrides((
+        filled-container-color: white,
+        filled-label-text-color: black
+    ));
+}

@@ -1,0 +1,103 @@
+@use '_slick-trackmixin' as slicktrackmixin;
+@use '_maxbreakpoints' as maxbreakpoints;
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+
+.slick-slide {
+    @include slicktrackmixin.slick-slide();
+
+    .img-background {
+        @include slicktrackmixin.flex-display-width();
+        @include slicktrackmixin.bg-dimention();
+
+        .container-text {
+            @include mixin.container-fluid();
+            @include slicktrackmixin.position-relative();
+
+            .content-row {
+                @include mixin.justify-style-row();
+
+                .content-column {
+                    @include slicktrackmixin.width-flex(0, 0 0 100%, 100%);
+                    position: relative;
+                    width: 100%;
+                    padding-right: 15px;
+                    padding-left: 15px;
+
+                    .text-wrap {
+                        @include slicktrackmixin.text-wrap();
+                    }
+
+                    @include breakpoints.respond(xxlg) {
+                        @include slicktrackmixin.width-flex(0, 0 0 58.33333%, 58.33333%);
+                    }
+                }
+
+                .img-holder {
+
+                    img {
+                        @include slicktrackmixin.img-dimention();
+                    }
+
+                    @include breakpoints.respond(lg) {
+                        position: absolute;
+                        @include slicktrackmixin.width-right-top(-135px, 99px, 50%);
+                    }
+
+                    @include breakpoints.respond(xxlg) {
+                        @include slicktrackmixin.width-right-top(-95px, -1px, 57%);
+                    }
+
+                    @include breakpoints.respond(xxxlg) {
+                        @include slicktrackmixin.width-right-top(-205px, -74px, 65%);
+                    }
+
+                    @include breakpoints.respond(xxxxlg) {
+                        @include slicktrackmixin.width-right-top(-265px, -94px, 75%);
+                    }
+
+                    @include maxbreakpoints.respond(md) {
+                        display: none; 
+                    }
+                }
+            }
+
+            @include breakpoints.respond(sm) {
+                max-width: 540px;
+            }
+        
+            @include breakpoints.respond(md) {
+                max-width: 720px;
+            }
+        
+            @include breakpoints.respond(lg) {
+                max-width: 960px;
+            }
+        
+            @include breakpoints.respond(xxlg) {
+                max-width: 1200px;
+                padding-top: 50px !important;
+            }
+        }
+    
+        @include breakpoints.respond(sm) {
+            min-height: 460px;
+        }
+    
+        @include breakpoints.respond(md) {
+            min-height: 640px;
+        }
+    
+        @include breakpoints.respond(lg) {
+            min-height: 730px;
+        }
+    
+        @include breakpoints.respond(xxlg) {
+            min-height: 810px;
+        }
+    
+        @include breakpoints.respond(xxxxlg) {
+            min-height: 1010px;
+        }
+    }
+}

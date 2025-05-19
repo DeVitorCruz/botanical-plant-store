@@ -1,0 +1,50 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 250px;
+    background: white;
+    padding: 1rem;
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+
+        .menu__list-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+                color: green;
+            }
+        }
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &__menu-btn {
+        display: none;
+
+        @media (max-width: 992px) {
+            display: inline-flex;
+        }
+    }
+
+    &__title {
+        margin-left: 1rem;
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+}
+
+.example-container {
+    height: 100vh;
+}

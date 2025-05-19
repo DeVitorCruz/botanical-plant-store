@@ -1,0 +1,35 @@
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+@use '_footermixin' as footermixin;
+
+footer {
+    @include mixin.container-fluid();
+    overflow: hidden !important;
+    display: block;
+
+    .copyright-content {
+        @include footermixin.copyright-content-features();
+
+        @include breakpoints.respond(lg) {
+            padding-top: 25px !important;
+            padding-bottom: 20px !important;
+        }
+
+        p {
+            a {
+                color: #5ba515;
+                cursor: default;
+            }
+        }
+
+        .text {
+            margin-top: 0;
+            margin-bottom: 0 !important;
+        }
+    }
+    
+    @include breakpoints.respond(lg) {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+    }
+}

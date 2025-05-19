@@ -1,0 +1,57 @@
+@use '_breakpoints' as breakpoints;
+
+@mixin collapse-menu-features() {
+    .header__toolbar-hidden {
+        flex-direction: column;
+        height: 0;
+        align-items: baseline;
+        transition: height .3s ease-in-out;
+
+        ul {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            background-color: white;
+
+            li {
+                font-size: 15px;
+                line-height: 16px;
+                color: #3333;
+                font-weight: 500;
+                cursor: pointer;
+
+                a {
+                    display: block;
+                    padding: 10px 15px;
+                    line-height: 26px;
+                }
+
+                .active {
+                    background-color: black;
+                    color: #5ba515;
+                }
+
+                &:hover {
+                    background-color: black;
+
+                    a {
+                        color: #5ba515 !important;
+                        transition: color .3s ease;
+                    }
+                }
+            }
+
+            @include breakpoints.respond(sm) {
+                padding: 0 15px;
+            }
+        }
+
+        @include breakpoints.respond(lg) {
+            display: none;
+        }
+    }
+
+    .header__toolbar-hidden-expanded {
+        height: 276px;
+    }
+}

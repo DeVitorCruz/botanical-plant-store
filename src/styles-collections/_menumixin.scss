@@ -1,0 +1,109 @@
+@use '_breakpoints' as breakpoints;
+
+@mixin page-nav($font-size: 14px, $line-height: 16px, $color: #333333, $font-weight: 700, $float: left) {
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+    font-weight: $font-weight;
+    float: $float;
+}
+
+@mixin page-nav-lg($webkit-box-orient: horizontal, $webkit-box-direction: normal, $flex-flow: row wrap, $webkit-box-pack: start, $justify-content: flex-start) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+@mixin nav-bar-features($position: relative, $display: flex, $flex-wrap: wrap, $webkit-box-align: center, $align-items: center, $webkit-box-pack: justify, $justify-content: space-between, $padding: 15px 15px) {
+    position: $position;
+    display: $display;
+    flex-wrap: $flex-wrap;
+    -webkit-box-align: $webkit-box-align;
+    align-items: $align-items;
+    -webkit-box-pack: $webkit-box-pack;
+    justify-content: $justify-content;
+    padding: $padding;
+}
+
+@mixin logo-text-features($color: #007bff, $text-decoration: none, $background-color: transparent) {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@mixin hidden-menu-btn() {
+    .mat-mdc-fab-base {
+        margin: 0;
+    
+        @include breakpoints.respond(md) {
+            margin: 0;
+        }
+    
+        @include breakpoints.respond(lg) {
+            display: none;
+        }
+    }
+}
+
+@mixin collapse-nav-bar($flex-basis: 100%, $webkit-box-flex: 1, $flex-grow: 1, $webkit-box-align: center, $align-items: center) {
+    flex-basis: 100%;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+@mixin collapse-nav-bar-flex($display: flex, $flex-basis: auto, $position: static, $background: transparent) {
+    display: $display !important;
+    flex-basis: $flex-basis;
+    position: $position;
+    background: $background;
+}
+
+@mixin collapse-nav-bar-display($display: none, $position: absolute, $background: #fff) {
+    display: $display;
+    position: $position;
+    background: $position;
+}
+
+@mixin nav-bar-list($padding-left: 0, $margin-bottom: 0, $list-style: none) {
+    padding-left: $padding-left;
+    margin-bottom: $margin-bottom;
+    list-style: $list-style;
+}
+
+@mixin nav-bar-list-content() {
+    text-transform: uppercase !important;
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@mixin nav-bar-list-item() {
+    display: block !important; 
+    color: #333333;
+    padding: 10px 15px;
+    background: none;
+    transition: color .3s ease;
+    white-space: nowrap;
+}
+
+@mixin middle-display($display: inline-block, $vertical-align: middle, $margin: 0 13px) {
+    display: $display;
+    vertical-align: $vertical-align;
+    margin: $margin;
+}
+
+@mixin block-adjusted($margin: -13px 0 0, $width: 110px, $display: block) {
+    margin: $margin;
+    width: $width;
+    display: $display;
+}
+
+@mixin border-top-green-panel-content($border-color: #5ba515) {
+    ::ng-deep .border-up-color .mat-mdc-menu-content {
+        border-top: solid $border-color;
+    }
+}

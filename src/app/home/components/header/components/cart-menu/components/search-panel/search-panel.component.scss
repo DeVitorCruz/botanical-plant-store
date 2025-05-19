@@ -1,0 +1,16 @@
+.search-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    
+    &__input {
+        width: 100%;
+    }
+
+    &__results {
+        margin-top: 1rem;
+        font-style: italic;
+        color: #666;
+    }
+}

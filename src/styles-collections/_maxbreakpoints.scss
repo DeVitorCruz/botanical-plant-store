@@ -1,0 +1,9 @@
+@mixin respond($maxbreakpoint) {
+    @if $maxbreakpoint == sm {
+        @media screen and (max-width: 576px) {
+        @content; }
+    } @else if $maxbreakpoint == md {
+        @media screen and (max-width: 991px) {
+        @content; }
+    }
+}

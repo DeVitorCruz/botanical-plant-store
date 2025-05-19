@@ -1,0 +1,90 @@
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+@use '_lang-menumixin' as langMenumixin;
+@use '_materialsmixin' as materialsmixin;
+$color-green: #5ba515;
+
+.lang-menu {
+    @include langMenumixin.langlist();
+    @include mixin.nav-content();
+    @include mixin.nav-tabs();
+    @include mixin.border-bottom-0();
+
+    li {
+        margin: 0 0 13px;
+
+        &:first-child {
+            margin: 0;
+        }
+
+        a {
+            text-transform: uppercase;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $color-green !important;
+            }
+
+            &:after {
+                @include langMenumixin.anchor-icon();
+
+                @include breakpoints.respond(md) {
+                    font-size: 17px;
+                    margin: 0 2px 2px 7px;
+                }
+
+                @include breakpoints.respond(xlg) {
+                    font-size: 17px;
+                    margin: 0 -2px 5px 10px;
+                }
+            }
+        }
+
+        .dropdown {
+            &::after {
+                @include langMenumixin.dropdow-icon();
+            }
+        }
+
+        .lang-menu__button {
+            &--active {
+                color: $color-green !important;
+            }
+        }
+    }
+    
+    @include breakpoints.respond(md) {
+        font-size: 14px;
+        padding-top: 20px !important;
+        
+        li {
+            margin: 0 0 0 24px;
+        }
+    }
+
+    @include breakpoints.respond(lg) {
+        padding-top: 20px !important;
+    
+        li {
+            margin: 0 0 0 12px;
+        }
+    }
+
+    @include breakpoints.respond(xxlg) {
+        padding-top: 30px !important;
+    }
+
+    @include breakpoints.respond(xxxlg) {
+        li {
+            margin: 0 0 0 20px;
+        }
+    }
+
+    @include breakpoints.respond(xxxxlg) {
+        li {
+            margin: 0 0 0 31px;
+        }
+    }
+}
+
+@include materialsmixin.menu-panel-hover($color-green, .3s, ease);

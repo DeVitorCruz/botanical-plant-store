@@ -1,0 +1,17 @@
+<div class="search-panel">
+    <mat-form-field appearance="outline" class="search-panel__input">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="query" (keyup.enter)="onSearch()" type="text" /> 
+    </mat-form-field>
+
+    <mat-button-toggle-group [(ngModel)]="filter" aria-label="Filter type">
+        <mat-button-toggle value="products">Products</mat-button-toggle>
+        <mat-button-toggle value="articles">articles</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+
+    <div class="search-panel__results">
+        <p *ngIf="!query">Start typing to search...</p>
+    </div>
+</div>

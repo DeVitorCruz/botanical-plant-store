@@ -1,0 +1,55 @@
+<ul class="lang-menu">
+    <li>
+        <a 
+            href="#"
+            [matMenuTriggerFor]="menuOptions"
+            class="lang-menu__button"
+            [class.lang-menu__button--active]="activeMenu === 'menu'"
+            (menuOpened)="activeMenu = 'menu'"
+            (menuClosed)="activeMenu = null"
+            >
+        <mat-icon 
+                aria-haddien="false"
+                aria-label="lang-menu"
+                fontIcon="menu"
+            ></mat-icon></a>
+        <mat-menu #menuOptions="matMenu">
+            <button mat-menu-item>Login</button>
+            <button mat-menu-item>Registration</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    </li>
+    <li>
+        <a 
+            href="#" 
+            class="dropdown lang-menu__button"
+            [matMenuTriggerFor]="langOptions"
+            [class.lang-menu__button--active]="activeMenu === 'lang'"
+            (menuOpened)="activeMenu = 'lang'"
+            (menuClosed)="activeMenu = null"
+            >eng</a>
+        <mat-menu #langOptions="matMenu">
+            <button mat-menu-item>English</button>
+            <button mat-menu-item>German</button>
+            <button mat-menu-item>French</button>
+        </mat-menu>
+    </li>
+    <li><a 
+            href="#" 
+            class="lang-menu__button dropdown"
+            [matMenuTriggerFor]="currencyOptions"
+            [class.lang-menu__button--active]="activeMenu === 'currency'"
+            (menuOpened)="activeMenu = 'currency'"
+            (menuClosed)="activeMenu = null"
+            >usd</a>
+        <mat-menu #currencyOptions="matMenu">
+            <button mat-menu-item>USD</button>
+            <button mat-menu-item>EU</button>
+            <button mat-menu-item>CHF</button>
+        </mat-menu>
+    </li>
+</ul>
+
+
+
+

@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer position="end" mode="over" [opened]="activePanel">
+        <div class="drawer-content">
+            <button mat-icon-button (click)="closeDrawer()" aria-label="close">
+                <mat-icon>close</mat-icon>
+            </button>
+
+            <ng-container [ngSwitch]="activePanel">
+                <div *ngSwitchCase="'cart'">Cart Content Here</div>
+                <div *ngSwitchCase="'favorite'">Cart Content Here</div>
+                <app-search-panel *ngSwitchCase="'search'"></app-search-panel>
+            </ng-container>
+        </div>
+    </mat-drawer>
+    
+    <div class="example-sidenav-content">
+        <app-header></app-header>
+        <app-main></app-main>
+        <app-footer></app-footer>
+    </div>
+</mat-drawer-container>
+
+
+

@@ -1,0 +1,96 @@
+@use '_asidemixin' as asidemixin;
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+@use '_contact-usmixin' as contactusmixin;
+
+.contact-us {
+    .title {
+        @include asidemixin.aside-title-heading(16px, 18px, #444444, 1px);
+        @include asidemixin.text-side-dimention(bold, uppercase, 35px);
+    }
+
+    .list-contact {
+        @include asidemixin.text-style-list(15px, 17px, #707070);
+        @include asidemixin.unestaled-list(16px, 0, none);
+
+        li {
+            @include asidemixin.aside-container-flex(flex, nowrap);
+            @include asidemixin.text-style-list(15px, 17px, #707070);
+            margin-bottom: 16px !important;
+
+            mat-icon {
+                margin-right: 16px !important;
+            }
+
+            address {
+                @include contactusmixin.address-styled();
+            }
+
+            span {
+                a {
+                    @include contactusmixin.contact-adress-styled();
+                }
+            }
+        }
+
+        .email {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .list-social-media {
+        @include asidemixin.text-style-list(15px, 18px, #444444);
+        @include asidemixin.aside-container-flex(flex, nowrap);
+        padding-left: 0;
+
+        label {
+            @include contactusmixin.label-bold(bold, 20px);
+
+            @include breakpoints.respond(sm) {
+                padding-top: 30px !important;
+            }
+
+            @include breakpoints.respond(xxlg) {
+                padding-top: 55px !important;
+            }
+        }
+
+        li {
+            @include contactusmixin.label-bold(bold, 10px);
+        
+            a {
+                color: #808080;
+
+                mat-icon {
+                    @include contactusmixin.mat-icon-sgv-size(16px 16px);
+                    overflow: visible;
+                }
+            }
+
+            @include breakpoints.respond(sm) {
+                padding-top: 20px !important;
+            }
+
+            @include breakpoints.respond(xxlg) {
+                padding-top: 30px !important;
+            }
+        }
+
+        .google {
+            margin-right: 10px !important;
+
+            a {
+                color: #808080;
+        
+                mat-icon {
+                    @include contactusmixin.mat-icon-sgv-size(23px 18px);
+                }
+            }
+        }
+
+        @include breakpoints.respond(xxlg) {
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+}

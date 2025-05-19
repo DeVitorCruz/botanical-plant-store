@@ -1,0 +1,23 @@
+@mixin langlist() {
+    font-size: 13px;
+    line-height: 1.14286;
+}
+
+@mixin dropdow-icon() {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+@mixin anchor-icon() {
+    font-size: 15px;
+    margin: 0 2px 2px 3px;
+    vertical-align: bottom !important;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}

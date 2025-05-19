@@ -1,0 +1,51 @@
+<div class="menu">
+    <nav class="menu__navbar"> 
+        <button 
+            mat-mini-fab 
+            aria-label="hidden-menu-btn"
+            (click)="toggleCollapse()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="menu__collapse">
+            <ul class="menu__list">
+                <li *ngFor="let item of menuItems; let i = index">
+                    <ng-container *ngIf="!item.hasLogo; else logoTemplate">
+                        <ng-container *ngIf="item.submenu; else simpleItem">
+                            <a 
+                                href="#" 
+                                class="menu__list-item"  
+                                [matMenuTriggerFor]="triggerMenu"
+                                #trigger="matMenuTrigger"
+                                (mouseenter)="trigger.openMenu()"
+                                >{{ item.label }}</a>
+                            <mat-menu
+                                #triggerMenu="matMenu"
+                                class="border-up-color" 
+                            >
+                                <span (mouseleave)="trigger.closeMenu()">
+                                    <button mat-menu-item *ngFor="let sub of item.submenu">
+                                        {{ sub.label }}
+                                    </button>
+                                </span>
+                            </mat-menu>
+                        </ng-container>
+                        <ng-template #simpleItem>
+                            <a href="#" class="menu__list-item">{{ item.label }}</a>
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #logoTemplate>
+                        <a href="#" class="manu__list-item nLogo">
+                            <img src="assets/logo/logo.png" alt="Botanical" />
+                        </a>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="menu__logo">
+        <a href="#">
+            <img src="assets/logo/logo.png" alt="Botanical">
+        </a>
+    </div>
+</div>
+

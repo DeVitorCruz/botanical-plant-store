@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+html { 
+    height: 100%; 
+    
+    body {
+        height: 100%;
+        margin: 0; 
+        font-family: Roboto, 
+        "Helvetica Neue", sans-serif; 
+        font-size: .9375rem;
+        line-height: 1.6;
+        color: #707070;
+        text-align: left;
+        background-color: #fff;
+
+        header {
+            display: block;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+    }
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}

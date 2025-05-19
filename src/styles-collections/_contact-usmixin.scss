@@ -1,0 +1,23 @@
+@mixin address-styled() {
+    color: #444444;
+    font-weight: bold;
+    font-style: normal;
+    line-height: inherit;
+    margin: 0 !important;
+}
+
+@mixin contact-adress-styled() {
+    color: #707070;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@mixin label-bold($font-weight: bold, $margin-right: 20px) {
+    font-weight: $font-weight;
+    margin-right: $margin-right !important;
+}
+
+@mixin mat-icon-sgv-size($width: 16px, $height: 16px) {
+    width: $width;
+    height: $height;
+}

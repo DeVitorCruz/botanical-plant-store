@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles-collections"
+              ]
+            },
             "outputPath": "dist/botanical-plant-store",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -29,10 +34,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -83,6 +91,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles-collections"
+              ]
+            },
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -93,15 +106,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4fc5d131-b06d-4459-9e42-b745debdda41"
   }
 }
