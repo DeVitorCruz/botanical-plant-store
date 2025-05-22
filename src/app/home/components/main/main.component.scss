@@ -40,6 +40,10 @@ main {
 
             .prev-slick, .next-slick {
                 @include bannermixin.slick-arrow-style(17px, 22px, #444444);
+
+                &:hover {
+                    @include mixin.hover-green-ease(#5ba515, all, .25s, linear);
+                }
             }
 
             .next-slick {

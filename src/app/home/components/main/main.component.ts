@@ -27,5 +27,5 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-
+  public current: number = 0;
 }

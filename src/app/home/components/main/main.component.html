@@ -1,11 +1,19 @@
 <main>
     <section class="banner">
-        <app-banner></app-banner>
+        <app-banner
+            #banner
+            (activeIndexChange)="current = $event"></app-banner>
         <div class="slick-navigator-wrap">
-            <a href="#" class="prev-slick">
+            <a 
+                href="#" 
+                class="prev-slick"
+                (click)="banner.prev()">
               <mat-icon aria-hidden="false" aria-label="First page icon" fontIcon="first_page"></mat-icon>  
             </a>
-            <a href="#" class="next-slick">
+            <a 
+                href="#" 
+                class="next-slick"
+                (click)="banner.next()">
               <mat-icon aria-hidden="false" aria-label="Last page icon" fontIcon="last_page"></mat-icon>  
             </a>
         </div>
