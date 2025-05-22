@@ -96,3 +96,8 @@
     margin-right: -15px;
     margin-left: -15px;
 }
+
+@mixin hover-green-ease($color: #5ba515, $transition-property: all, $transition-duration: .25s, $transition-timing-function: linear) {
+    color: $color;
+    transition: $transition-property $transition-duration $transition-timing-function;   
+}
