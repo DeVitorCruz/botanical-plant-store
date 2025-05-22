@@ -1,15 +1,13 @@
-<div 
-    class="slick-slide"
-    style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
-    aria-hidden="false"
-    role="tabpanel"
-    aria-describedby="slick-slide-control00"
-    >
-    <ng-container *ngFor="let slide of slides; let i = index">
+
+<ng-container *ngFor="let slide of slides; let i = index">
+    <div class="slick-slide" style="width: 100%; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
+        aria-hidden="false" role="tabpanel" aria-describedby="slick-slide-control00"
+        *ngIf="i === activeIndex"
+        >
         <div
-            *ngIf="i === activeIndex"
             class="img-background"
             [style]="'background-image: url('+ slide.banner +')'"
+            [@fadeCross]
             >
             <div class="container-text">
                 <div class="content-row">
@@ -36,5 +34,5 @@
                 </div>
             </div>
         </div>
-    </ng-container>
-</div>
+    </div>
+</ng-container>

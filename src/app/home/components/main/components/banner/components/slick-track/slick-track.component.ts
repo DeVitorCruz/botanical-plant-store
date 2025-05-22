@@ -5,6 +5,7 @@ import { SLIDES } from './constants/SLIDES';
 import { NgIf } from '@angular/common';
 import { NgFor } from '@angular/common';
 import { Slide } from './interfaces/slide';
+import { fadeCross } from './animations/fadeCross.animation';
 
 @Component({
   selector: 'app-slick-track',
@@ -15,7 +16,10 @@ import { Slide } from './interfaces/slide';
     NgFor
   ],
   templateUrl: './slick-track.component.html',
-  styleUrl: './slick-track.component.scss'
+  styleUrl: './slick-track.component.scss',
+  animations: [
+    fadeCross()
+  ]
 })
 export class SlickTrackComponent {
   @Input() public slides: Slide[] = [];
