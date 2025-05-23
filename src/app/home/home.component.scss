@@ -1,10 +1,14 @@
+$white-color: #fff;
+$border-bottom-color: #e0e0e0;
+$green-color: #5ab515;
+
 .sidenav-container {
     height: 100%;
 }
 
 .sidenav {
     width: 250px;
-    background: white;
+    background: $white-color;
     padding: 1rem;
 
     .menu__list {
@@ -13,12 +17,12 @@
 
         .menu__list-item {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid $border-bottom-color;
             color: #333;
             text-decoration: none;
 
             &:hover {
-                color: green;
+                color: $green-color;
             }
         }
     }
@@ -27,7 +31,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: $white-color;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     &__menu-btn {
@@ -47,4 +51,8 @@
 
 .example-container {
     height: 100vh;
+
+    .example-sidenav-content {
+        background-color: $white-color;
+    }
 }
