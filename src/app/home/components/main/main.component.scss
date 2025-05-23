@@ -55,6 +55,10 @@ main {
     .justify {
         display: block;
         @include mainmixin.main-breakpoint-justify();
+
+        app-justify {
+            @include mixin.justify-style-row();
+        }
     }
 
     .feature-products {

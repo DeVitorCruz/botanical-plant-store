@@ -1,0 +1,112 @@
+@use '_breakpoints' as breakpoints;
+@use '_mixin' as mixin;
+@use '_justifymixin' as justifymixin;
+
+.image-container, .text-container {
+    @include mixin.flex-item(100%, 100%, 0);
+    @include mixin.relative-content();
+
+    @include breakpoints.respond(lg) {
+        @include mixin.flex-item(50%, 50%, 0);
+    }
+}
+
+.image-container {
+    margin-bottom: 20px !important;
+
+    img {
+        @include mixin.fill-height-img(100%, auto);
+    }
+
+    @include breakpoints.respond(lg) {
+        margin-bottom: 0 !important;
+    }
+}
+
+.text-container {
+    padding-right: 20px !important;
+    color: #707070;
+
+    .title {
+        @include justifymixin.heading-text-features();
+        @include justifymixin.heading-font-style(bold, #333333, 25px, 27px);
+        
+        &::before {
+            @include justifymixin.heading-before("", absolute, 60px, 3px, auto, auto, 0, 0, #5ba515);
+
+            @include breakpoints.respond(ssm) {
+                @include justifymixin.heading-font-style(bold, #333333, 36px, 27px); 
+                @include justifymixin.heading-before("", absolute, 100px, 3px, auto, auto, 0, 0, #5ba515)
+            }
+        }
+
+        @include breakpoints.respond(ssm) {
+            @include justifymixin.heading-font-style(bold, #333333, 36px, 27px);
+        }
+    }
+
+    .text {
+        @include mixin.padding-sizing-top-bottom(1rem, 0);
+        
+        .btn-more {
+            @include mixin.hover-green-ease(#5ba515, all, .25s, linear);
+        }
+
+        @include breakpoints.respond(lg) {
+            @include mixin.padding-sizing-top-bottom(50px, 0);
+        }
+
+        @include breakpoints.respond(xxlg) {
+            @include mixin.padding-sizing-top-bottom(70px, 0);
+        }
+    }
+
+    .list {
+        @include justifymixin.choose-list(#838383, 0 0 0 -10px,);
+        padding: 0;
+
+        .list-item {
+            @include mixin.container-flex(flex, nowrap);
+            @include mixin.justify-content(start, flex-start);
+
+            .icon {
+                @include justifymixin.heading-font-style(100, #5ba515, 70px, 75px);
+            }
+
+            .discription-content {
+                @include mixin.container-flex(flex, wrap);
+                @include mixin.justify-content(start, flex-start);
+                
+                h3 {
+                    @include justifymixin.heading-font-style(bold, #444444, 20px, 22px);
+                }
+            }
+        }
+
+        .list-item-sizing {
+            margin-bottom: 16px !important;
+            
+            @include breakpoints.respond(lg) {
+                margin-bottom: 25px !important;
+            }
+        
+            @include breakpoints.respond(xxlg) {
+                margin-bottom: 35px !important;
+            }
+        }
+
+        li:last-child {
+            margin-bottom: 0 !important;
+            
+            @include breakpoints.respond(lg) {
+                margin-bottom: 0 !important;
+            }
+        
+            @include breakpoints.respond(xxlg) {
+            margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+@include justifymixin.icon-auto-sizing();

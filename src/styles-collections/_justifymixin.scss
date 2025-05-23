@@ -4,3 +4,62 @@
     margin-right: -15px;
     margin-left: -15px; 
 }
+
+@mixin heading-text-features() {
+    position: relative !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 25px !important;
+}
+
+@mixin heading-font-style(
+    $font-weight: bold,
+    $color: #33333333,
+    $font-size: 36px,
+    $line-height: 27px
+) {
+    font-weight: $font-weight;
+    color: $color;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin choose-list(
+    $color: #838383,
+    $margin: 0 0 0 10px,
+) {
+    color: $color;
+    margin: $margin;
+}
+
+@mixin heading-before(
+    $content: "",
+    $position: absolute,
+    $width: 60px,
+    $height: 3px,
+    $top: auto,
+    $right: auto,
+    $bottom: 0,
+    $left: 0,
+    $background: #5ba515,
+) {
+    content: $content;
+    position: $position;
+    width: $width;
+    height: $height;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    background: $background;
+}
+
+
+@mixin icon-auto-sizing() {
+    ::ng-deep .icon-plant.mat-icon {
+        padding: 0 20px;
+        height: 100px;
+        width: auto;
+        overflow:visible;   
+    }
+}
+

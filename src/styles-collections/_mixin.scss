@@ -7,9 +7,12 @@
     width: 100%;
 }
 
-@mixin container-flex() {
-    display: flex !important;
-    flex-wrap: wrap;
+@mixin container-flex(
+    $display: flex,
+    $flex-wrap: wrap,
+) {
+    display: $display !important;
+    flex-wrap: $flex-wrap;
 }
 
 @mixin container-fluid() {
@@ -55,7 +58,10 @@
     border-bottom: none solid #dee2e6;
 }
 
-@mixin justify-content($webkit-box-pack: center, $justify-content: center) {
+@mixin justify-content(
+    $webkit-box-pack: center, 
+    $justify-content: center
+    ) {
     -webkit-box-pack: $webkit-box-pack !important;
     justify-content: $justify-content !important;
 }
