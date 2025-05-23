@@ -1,53 +1,32 @@
-<div class="image-container">
-    <img src="assets/justify-img/img01.jpg" alt="Image description">
-</div>
-<div class="text-container">
-    <h2 class="title">Why choose us?</h2>
-    <p class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At ea quos ducimus magni neque, explicabo exercitationem tempora quam ipsum similique repudiandae alias aperiam, recusandae officiis ab eligendi unde rem possimus ...
-        <a href="#" class="btn-more">
-            <i>Learn More</i>
-        </a>
-    </p>
-    <ul class="list">
-        <li class="list-item list-item-sizing">
-            <mat-icon 
-                class="icon icon-plant"        
-                aria-hidden="false" 
-                aria-label="Leaf icon" 
-                svgIcon="leaf-solid"></mat-icon>
-            <div class="discription-content">
-                <h3>Hand Planted</h3>
-                <p>
-                    There are many variations of passages of lorem ipsum available, but the majority have sufferend alteration in some form.
-                </p>
-            </div>
-        </li>
-        <li class="list-item list-item-sizing">
-            <mat-icon 
-                class="icon icon-plant"
-                aria-hidden="false" 
-                aria-label="Leaf icon" 
-                svgIcon="seedling-solid"></mat-icon>
-            <div class="discription-content">
-                <h3>Natural Sunlight</h3>
-                <p>
-                    It is a long established fact that a reader will be distracted by the reable content of a page.
-                </p>
-            </div>
-        </li>
-        <li class="list-item list-item-sizing">
-            <mat-icon 
-                class="icon icon-plant"
-                aria-hidden="false" 
-                aria-label="Leaf icon" 
-                svgIcon="tree-solid"></mat-icon>
-            <div class="discription-content">
-                <h3>Clean Air</h3>
-                <p>
-                    Ther are many variations of passages of lorem ipsum available, but the majority have suffered.
-                </p>
-            </div>
-        </li>
-    </ul>
-</div>
+<ng-container *ngFor="let justify of justifyContentList">
+    <div class="image-container">
+        <img [src]="justify.imgPath" [alt]="justify.imgAlt">
+    </div>
+    <div class="text-container">
+        <h2 class="title">{{ justify.title }}</h2>
+        <p class="text">
+            {{ justify.text }}
+            <a href="#" class="btn-more">
+                <i>Learn More</i>
+            </a>
+        </p>
+        <ul class="list">
+            <li 
+                class="list-item list-item-sizing"
+                *ngFor="let icon of justify.iconList"
+                >
+                <mat-icon
+                    class="icon icon-plant"
+                    aria-hidden="false"
+                    aria-label="Leaf icon"
+                    [svgIcon]="icon.svgIcon"></mat-icon>
+                <div class="discription-content">
+                    <h3>{{ icon.title }}</h3>
+                    <p>
+                        {{ icon.text }}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</ng-container>
