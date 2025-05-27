@@ -1,1 +1,14 @@
-<p>contact-list works!</p>
+<div
+    *ngFor="let badge of badgeInfo"
+    class="pill-badge-content">
+    <div class="pill-badge">
+        <mat-icon
+            aria-hidden="false"
+            aria-label="Truck Solid"
+            [svgIcon]="badge.iconInfo"></mat-icon>
+        <div class="text-content">
+            <strong class="text-stg">{{ badge.textStrong }}</strong>
+            <p class="text">{{ badge.text }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+@use '_mixin' as mixin;
+@use '_mixin_2' as mixin2;
+@use '_breakpoints' as breakpoints;
+@use '_contactlistmixin' as contactlistmixin;
+
+.pill-badge-content {
+    @include mixin.relative-content();
+    @include mixin.flex-item($flex: 100%, $max-width: 100%, $webkit-box-flex: 0);
+    margin-bottom: 20px !important;
+
+    .pill-badge {
+        @include mixin.container-flex($display: flex, $flex-wrap: nowrap);
+        @include contactlistmixin.pill-border();
+        @include mixin.padding-sizing-top-bottom($padding-bottom: 10px, $padding-top: 10px);
+        @include mixin2.padding-sizing-left-right($padding-left: 16px, $padding-right: 16px);
+        
+        mat-icon {
+            @include mixin2.font-size-color-style($font-size: 0px, $line-height: 0px, $color: #5ba515);
+            @include mixin2.box-dimention($width: 28px, $height: 45px);
+            fill: currentColor;
+            stroke: currentColor;
+
+            @include breakpoints.respond(xxlg) {
+                @include mixin2.font-size-color-style($font-size: 0px, $line-height: 0, $color: #5ba515);
+                @include mixin2.box-dimention($width: 44px, $height: 51px);
+            }
+        }
+
+        .text-content {
+            padding-left: 10px !important;
+        
+            .text-stg {
+                @include contactlistmixin.strong-style($display: block,
+                    $margin-bottom: 5px,
+                    $font-size: 15px,
+                    $line-height: 18px,
+                    $color: #444444               
+                );
+            
+                @include breakpoints.respond(xxlg) {
+                    font-size: 15px;
+                    line-height: 18px;
+                }
+            }
+
+            .text {
+                margin: 0 !important; 
+            }
+        }
+
+        @include breakpoints.respond(md) {
+            @include mixin.padding-sizing-top-bottom($padding-bottom: 16px, $padding-top: 16px);
+            @include mixin2.padding-sizing-left-right($padding-left: 10px, $padding-right: 10px);   
+        }
+
+        @include breakpoints.respond(xxlg) {
+            @include mixin.padding-sizing-top-bottom($padding-bottom: 25px, $padding-top: 25px);
+            @include mixin2.padding-sizing-left-right($padding-left: 20px, $padding-right: 20px);   
+        }
+    }
+
+    @include breakpoints.respond(sm) {
+        @include mixin.flex-item($flex: 50%, $max-width: 50%, $webkit-box-flex: 0);
+    }
+
+    @include breakpoints.respond(lg) {
+        @include mixin.flex-item($flex: 25%, $max-width: 25%, $webkit-box-flex: 0);
+        margin-bottom: 0 !important;
+    }
+}

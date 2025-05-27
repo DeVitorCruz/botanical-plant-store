@@ -1,0 +1,19 @@
+@mixin pill-border() {
+    border: 1px solid #dee2e6 !important;
+    overflow: hidden !important;
+    border-radius: 50px;
+}
+
+@mixin strong-style(
+    $display: block,
+    $margin-bottom: 5px,
+    $font-size: 15px,
+    $line-height: 18px,
+    $color: #444444
+) {
+    display: $display !important; 
+    margin-bottom: $margin-bottom !important;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}

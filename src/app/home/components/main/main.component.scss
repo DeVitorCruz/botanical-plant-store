@@ -69,6 +69,10 @@ main {
     .contact-list {
         @include mixin.features-contact-list(20px, 5px);
         @include mainmixin.main-breakpoint-features-conact-list();
+
+        app-contact-list {
+            @include mixin.justify-style-row();
+        }
     }
 
     .offer-product {
