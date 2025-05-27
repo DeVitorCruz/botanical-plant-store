@@ -1,0 +1,9 @@
+@mixin offer-banner-feature(
+    $color: #007bff,
+    $transition: all .25s linear,
+    $width: 100%
+) {
+    color: $color;
+    transition: $transition;
+    width: $width;
+}

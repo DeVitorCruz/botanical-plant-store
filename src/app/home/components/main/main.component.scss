@@ -78,6 +78,10 @@ main {
     .offer-product {
         @include mixin.features-contact-list(25px, 25px);
         @include mainmixin.main-breakpoint-features-offer-product();
+
+        app-offer-product {
+            @include mixin.justify-style-row();
+        }
     }
 
     .product-carousel {

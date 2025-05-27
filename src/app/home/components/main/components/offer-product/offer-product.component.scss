@@ -1,0 +1,28 @@
+@use '_mixin' as mixin;
+@use '_breakpoints' as breakpoints;
+@use '_offermixin' as offermixin;
+
+.offer-column {
+    @include mixin.relative-content();
+    @include mixin.flex-item($flex: 100%, $max-width: 100%, $webkit-box-flex: 0);
+
+    .offer-banner {
+        @include offermixin.offer-banner-feature($color: #007bff, $transition: all .25s linear, $width:100%);
+        
+        .img-screen {
+            @include mixin.fill-height-img($max-width: 100%, $height: auto);
+        }
+    }
+
+    @include breakpoints.respond(sm) {
+        @include mixin.flex-item($flex: 50%, $max-width: 50%, $webkit-box-flex: 0);
+    }
+}
+
+.offer-column-m {
+    margin-bottom: 10px !important;
+    
+    @include breakpoints.respond(sm) {
+        margin-bottom: 0 !important;
+    }
+}
