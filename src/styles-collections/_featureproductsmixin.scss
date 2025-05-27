@@ -10,3 +10,58 @@
     padding-left: $padding-left !important;
     padding-bottom: $padding-bottom !important;
 }
+
+@mixin features-products-header(
+    $display: block,
+    $text-align: center,
+    $margin-bottom: 35px
+) {
+    display: block;
+    text-align: center !important;
+    margin-bottom: 35px !important;
+}
+
+@mixin product-grid-sizing() {
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+@mixin feature-card-product(
+    $width: 100%,
+    $margin: 0 16px,
+    $margin-bottom: 30px
+    ) {
+    width: 100%;
+    padding: 0 16px !important;
+    margin-bottom: 30px !important;
+}
+
+@mixin product-card-title() {
+    display: block !important;
+    margin-bottom: 10px !important;
+    font-size: 13px;
+}
+
+@mixin hidden-list-style() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: bottom .3s ease-out;
+}
+
+@mixin hidden-list-item-style() {
+    box-shadow: 0 1px 19px 6px rgba(0, 0, 0, .1);
+    overflow: hidden !important;
+    margin-right: 10px !important;
+}
+
+@mixin hidden-liste-icon-style() {
+    height: 20px;
+    width: 24px;
+    overflow: visible;
+    stroke: currentColor;
+    vertical-align: middle;
+}
